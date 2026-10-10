@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <h1>AI Health Assistant</h1>
+                </div>
+                <div class="api-selector">
+                    <label for="apiProvider">AI Provider:</label>
+                    <select id="apiProvider">
+                        <option value="openai">OpenAI (GPT-3.5)</option>
+                        <option value="google">Google Gemini</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Access</h3>
+                    <button class="quick-btn" onclick="loadSymptom('Fever')">🤒 Fever</button>
+                    <button class="quick-btn" onclick="loadSymptom('Headache')">🤕 Headache</button>
+                    <button class="quick-btn" onclick="loadSymptom('Cough')">😷 Cough</button>
+                    <button class="quick-btn" onclick="loadSymptom('Fatigue')">😴 Fatigue</button>
+                    <button class="quick-btn" onclick="loadSymptom('Sore Throat')">🫀 Sore Throat</button>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Daily Health Tips</h3>
+                    <div id="tipsContainer" class="tips-container"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <button class="btn btn-secondary" onclick="clearChat()">🔄 New Chat</button>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-container">
+                <!-- Disclaimer -->
+                <div class="disclaimer-banner">
+                    <p>⚠️ <strong>Disclaimer:</strong> This AI assistant provides educational health information only. It is NOT a substitute for professional medical advice. Always consult with a qualified healthcare provider.</p>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message assistant-message">
+                        <div class="message-content">
+                            <p>👋 Hello! I'm your AI Health Assistant. I'm here to provide general health information and wellness guidance.</p>
+                            <p>You can:</p>
+                            <ul>
+                                <li>Describe your symptoms</li>
+                                <li>Ask about health conditions</li>
+                                <li>Get wellness tips</li>
+                                <li>Learn about preventive care</li>
+                            </ul>
+                            <p><em>Remember: For emergencies, call emergency services. For serious concerns, consult a healthcare professional.</em></p>
+                        </div>
+                        <span class="timestamp">Just now</span>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <form onsubmit="sendMessage(event)">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="messageInput" 
+                                placeholder="Describe your symptoms or ask a health question..."
+                                required
+                            >
+                            <button type="submit" class="btn btn-primary send-btn">
+                                <span>Send</span>
+                                <span class="spinner" id="spinner" style="display: none;"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
