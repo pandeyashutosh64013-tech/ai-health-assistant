@@ -1,7 +1,7 @@
 {
   "name": "ai-health-assistant",
-  "version": "1.0.0",
-  "description": "An AI-powered health assistant application",
+  "version": "2.0.0",
+  "description": "A full-featured AI health assistant with authentication, BMI tracking, health journal, appointments, and AI chat",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,20 +9,24 @@
   },
   "keywords": [
     "health",
-    "ai",
     "assistant",
-    "chatbot"
+    "ai",
+    "node",
+    "chatbot",
+    "wellness"
   ],
-  "author": "Your Name",
+  "author": "ASHUTOSH PANDEY",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "axios": "^1.6.0",
-    "openai": "^4.0.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-session": "^1.19.1",
+    "uuid": "^11.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.1.7"
   }
 }

@@ -1,0 +1,89 @@
+# AI Health Assistant
+
+A full-featured AI health assistant built with HTML, CSS, JavaScript, and Node.js. It includes user authentication, BMI tracking, health journal, appointment scheduling, and AI health chat support via OpenAI or Google Gemini.
+
+## Features
+
+- AI-powered health Q&A with OpenAI or Google Gemini
+- User registration and login
+- Personalized health dashboard
+- BMI calculator and health recommendations
+- Health journal tracking (blood pressure, heart rate, sleep, hydration, notes)
+- Appointment booking and scheduling
+- Wellness tips and quick symptom actions
+- Dark mode support
+- Light persistent storage using local JSON file
+
+## Stack
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Authentication: Express sessions + bcrypt
+- Data persistence: JSON file storage
+- AI API integration: OpenAI and Google Generative AI
+
+## Getting Started
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Copy .env example and add your keys
+
+```bash
+cp .env.example .env
+```
+
+3. Start the server
+
+```bash
+npm start
+```
+
+4. Open your browser at:
+
+```text
+http://localhost:5000
+```
+
+## Environment Variables
+
+```env
+OPENAI_API_KEY=your_key
+GOOGLE_API_KEY=your_key
+SESSION_SECRET=your_secret
+PORT=5000
+```
+
+## Important Note
+
+This application provides general wellness information and is not a substitute for professional medical advice.
+
+## Project Structure
+
+```text
+ai-health-assistant/
+├── public/
+│   ├── app.js
+│   ├── index.html
+│   └── styles.css
+├── data/
+│   └── db.json
+├── .env.example
+├── package.json
+├── README.md
+├── server.js
+└── .gitignore
+```
+
+## Future Enhancements
+
+- Doctor booking workflows with calendars
+- Email notifications
+- AI symptom triage classification
+- Database-backed cloud storage
+- Admin dashboard for clinics
+- Mobile app version
+
